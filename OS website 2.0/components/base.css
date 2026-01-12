@@ -1,0 +1,53 @@
+/* Base Styles - Variables, Reset, Typography, Container */
+
+:root {
+    --primary-orange: #e84c0f;
+    --primary-orange-hover: #cf420d;
+    --text-dark: #1d1d1f; /* Apple's dark text */
+    --text-gray: #86868b; /* Apple's gray text */
+    --bg-light: #f5f5f7; /* Apple's light background */
+    --white: #ffffff;
+    --border-color: #d2d2d7;
+    --card-radius: 18px; /* Slightly more rounded */
+    --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.08); /* Sophisticated diffuse shadow */
+    --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased; /* Crisp text rendering */
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #222222;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1300px; /* Slightly tighter max-width for focus */
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+main {
+    padding-bottom: 40px;
+}
+

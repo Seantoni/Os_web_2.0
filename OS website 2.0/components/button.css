@@ -1,0 +1,20 @@
+/* Button Component */
+
+.view-all-btn {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-orange); /* Changed from black to orange */
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.view-all-btn:hover {
+    background-color: rgba(0,0,0,0.1);
+    transform: translateX(3px);
+}
+

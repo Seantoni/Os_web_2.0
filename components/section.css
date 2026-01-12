@@ -1,0 +1,44 @@
+/* Section Component */
+
+.deal-section {
+    margin-bottom: 21px; /* Reduced breathing room */
+    position: relative; /* For positioning scroll arrow */
+    padding-bottom: 21px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.deal-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.section-header h2 {
+    font-size: 23px;
+    font-weight: 600;
+    color: #222222;
+    letter-spacing: -0.02em;
+}
+
+.section-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .section-title-wrapper {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+}
+

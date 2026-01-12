@@ -1,0 +1,23 @@
+/* Index Page Styles - Import Components */
+
+@import url('./components/base.css');
+@import url('./components/header.css');
+@import url('./components/nav-pill.css');
+@import url('./components/smart-filters.css');
+@import url('./components/hero-bento.css');
+@import url('./components/section.css');
+@import url('./components/timer.css');
+@import url('./components/button.css');
+@import url('./components/carousel.css');
+@import url('./components/card.css');
+@import url('./components/badge.css');
+@import url('./components/form.css');
+@import url('./components/brands.css');
+@import url('./components/newsletter.css');
+
+/* Mobile Responsive - Container */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+}

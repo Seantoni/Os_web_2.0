@@ -1,0 +1,193 @@
+/* Card Component */
+
+.deal-card {
+    flex: 0 0 252px;
+    scroll-snap-align: start;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Ensure card links maintain styling */
+a .deal-card {
+    display: block;
+    width: 100%;
+}
+
+/* Ensure anchor wrapper doesn't break flex sizing */
+.carousel-container > a {
+    flex: 0 0 252px;
+    scroll-snap-align: start;
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (max-width: 768px) {
+    .carousel-container > a {
+        flex: 0 0 calc(45% - 6px);
+        min-width: 150px;
+    }
+}
+
+/* Airbnb/Apple Card Style */
+.card-image {
+    position: relative;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    width: 252px;
+    height: 163px;
+    margin-bottom: 10px;
+    /* Removed default shadow, focused on hover lift */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
+    transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hover Effect: Apple TV "Focus" */
+.deal-card:hover .card-image {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.deal-card:hover .card-image img {
+    transform: scale(1.05); 
+}
+
+/* Card Types */
+.card-wide {
+    flex: 0 0 360px;
+}
+
+.card-wide .card-image {
+    width: 360px;
+    height: 203px;
+}
+
+.card-compact {
+    flex: 0 0 200px;
+}
+
+.card-compact .card-image {
+    width: 200px;
+    height: 144px;
+}
+
+.card-content {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.merchant-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft shadow instead of border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--text-dark);
+    font-size: 16px;
+}
+
+.deal-info {
+    flex: 1;
+}
+
+.deal-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.deal-info p {
+    font-size: 13px;
+    color: #4a4a4f;
+    line-height: 1.3;
+    font-weight: 500;
+    margin: 0;
+}
+
+.deal-info-compact {
+    text-align: left; /* Aligned left for cleaner look */
+}
+
+.deal-info-compact h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: var(--text-dark);
+}
+
+.deal-info-compact .price {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark); /* Dark price for cleaner look */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .deal-card {
+        flex: 0 0 calc(45% - 6px); /* Show 2 cards + peek of third */
+        min-width: 150px;
+    }
+    
+    .card-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 252 / 163;
+    }
+    
+    .card-wide {
+        flex: 0 0 calc(65% - 6px); /* Wide cards: 1.5 visible + peek */
+        min-width: 220px;
+    }
+
+    .card-wide .card-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 360 / 203;
+    }
+
+    .card-compact {
+        flex: 0 0 calc(30% - 4px); /* Compact: 3 visible + peek */
+        min-width: 110px;
+    }
+
+    .card-compact .card-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 200 / 144;
+    }
+    
+    /* Adjust card content for mobile */
+    .deal-info h3 {
+        font-size: 12px;
+        line-height: 1.2;
+    }
+    
+    .deal-info p {
+        font-size: 11px;
+    }
+    
+    .merchant-logo {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .card-content {
+        gap: 8px;
+    }
+}
+

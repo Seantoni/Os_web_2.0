@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - OfertaSimple</title>
+    <link rel="stylesheet" href="./checkout.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://oferta-uploads-prod.s3.us-east-1.amazonaws.com/pictures/others/OfertaSimple%20Assets/Asset%2075.png?_t=1743086513" alt="OfertaSimple Logo">
+            </div>
+            <div class="header-right">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                </div>
+                <div class="user-greeting">
+                    <i class="fas fa-user"></i>
+                    <span>¡Hola Jose!</span>
+                    <button class="menu-btn"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="checkout-container">
+        <div class="checkout-content">
+            <!-- Left Column -->
+            <div class="checkout-left">
+                <!-- Purchase Details -->
+                <div class="checkout-section">
+                    <h2 class="checkout-section-title">Detalles de Compra</h2>
+                    
+                    <div class="purchase-item">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipOldsWiL7A3WG6ue2_f7CBy1DSHwKaE0KWFs13Z=s1360-w1360-h1020-rw" alt="Punta Chame Villas" class="purchase-item-image">
+                        <div class="purchase-item-details">
+                            <div class="purchase-item-merchant">Punta Chame Villas</div>
+                            <div class="purchase-item-description">
+                                Pasadías disponibles de lunes a domingo que incluyen uso de las instalaciones de 9 a.m. a 4 p.m. + consumo en comidas y bebidas en Punta Chame Villas. Elige la opción que mejor se adapte a ti.
+                            </div>
+                            <div class="purchase-item-price">$40</div>
+                            
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                                <span class="quantity-display" id="quantity">1</span>
+                                <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                            </div>
+                            
+                            <div class="purchase-item-total">
+                                <span class="purchase-item-total-label">Total</span>
+                                <span class="purchase-item-total-price" id="item-total">$40</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gift Option -->
+                    <label class="gift-option">
+                        <input type="checkbox" id="gift-checkbox">
+                        <div class="gift-checkbox"></div>
+                        <div class="gift-label">
+                            <i class="fas fa-gift"></i>
+                            Comprar Como Regalo
+                        </div>
+                    </label>
+
+                    <!-- Coupon Section -->
+                    <div class="coupon-section">
+                        <div class="coupon-toggle" onclick="toggleCoupon()">
+                            <span class="coupon-label">¿Tienes Un Cupón? (Opcional)</span>
+                            <i class="fas fa-plus coupon-icon"></i>
+                        </div>
+                        <div class="coupon-input-container">
+                            <input type="text" class="coupon-input" placeholder="Ingresa tu código de cupón">
+                            <button class="coupon-btn">Aplicar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Information -->
+                <div class="checkout-section">
+                    <h2 class="checkout-section-title">Información de Pago</h2>
+                    
+                    <div class="payment-options-list">
+                        <!-- Yappy Payment -->
+                        <label class="payment-option selected">
+                            <input type="radio" name="payment" value="yappy" checked>
+                            <div class="payment-option-header">
+                                <div class="payment-option-left">
+                                    <div class="payment-radio"></div>
+                                    <div class="payment-option-content">
+                                        <div class="payment-option-title">Yappy</div>
+                                        <div class="payment-logo-container">
+                                            <img src="https://placehold.co/100x30/0066CC/FFF?text=Yappy" alt="Yappy" class="payment-logo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment-description">
+                                Luego de hacer clic en "Completar Orden", serás redirigido a Yappy para completar tu compra de forma segura.
+                            </div>
+                            <div class="payment-details">
+                                <div class="payment-phone">Celular 65909845</div>
+                                <div class="payment-actions">
+                                    <span class="payment-action-link">Cambiar</span>
+                                    <span class="payment-action-link">Eliminar</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Credit Card Payment -->
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card">
+                            <div class="payment-option-header">
+                                <div class="payment-option-left">
+                                    <div class="payment-radio"></div>
+                                    <div class="payment-option-content">
+                                        <div class="payment-option-title">Tarjeta de crédito</div>
+                                        <div class="payment-option-subtitle">Tarjeta xxxxxxxx8290</div>
+                                        <div class="payment-card-logos">
+                                            <img src="https://placehold.co/40x25/1A1F71/FFF?text=VISA" alt="VISA" class="payment-card-logo">
+                                            <img src="https://placehold.co/40x25/EB001B/FFF?text=MC" alt="MasterCard" class="payment-card-logo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Apple Pay Payment -->
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="apple">
+                            <div class="payment-option-header">
+                                <div class="payment-option-left">
+                                    <div class="payment-radio"></div>
+                                    <div class="payment-option-content">
+                                        <div class="payment-option-title">Apple Pay</div>
+                                        <div class="payment-logo-container">
+                                            <img src="https://placehold.co/80x30/000/FFF?text=Apple+Pay" alt="Apple Pay" class="payment-logo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Security Message -->
+                    <div class="payment-security">
+                        <i class="fas fa-lock"></i>
+                        <span>El método de pago será guardado de forma segura en tu cuenta para facilitar tus compras futuras. Puedes eliminar esta opción en cualquier momento accesando a Mi Cuenta.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Order Summary -->
+            <div class="checkout-right">
+                <div class="checkout-section order-summary">
+                    <h2 class="checkout-section-title">Resumen de la orden</h2>
+                    
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal</span>
+                        <span class="summary-value" id="subtotal">$40</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span class="summary-label">Ahorro</span>
+                        <span class="summary-savings">$40</span>
+                    </div>
+                    
+                    <div class="summary-row summary-discount">
+                        <span class="summary-label">
+                            <i class="fas fa-gift" style="font-size: 11px; margin-right: 4px;"></i>
+                            Descuento Promocional
+                        </span>
+                        <span class="summary-discount-value" id="promo-discount">-$5</span>
+                    </div>
+                    
+                    <!-- Timer and Progress Bar Section -->
+                    <div class="summary-timer-section">
+                        <div class="summary-timer-content">
+                            <div class="summary-timer-message">
+                                <span class="summary-timer-amount">$5 menos</span> si compras antes de:
+                                <span class="summary-timer-display" id="summary-promo-timer">02:00</span>
+                            </div>
+                        </div>
+                        <div class="summary-timer-progress-container">
+                            <div class="summary-timer-progress-bar" id="summary-promo-progress">
+                                <div class="progress-bar-flame"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-row summary-total">
+                        <span class="summary-total-label">Total</span>
+                        <span class="summary-total-value" id="total">$35</span>
+                    </div>
+                    
+                    <button class="complete-order-btn">Completar orden</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Component Scripts -->
+    <script src="../components/js/checkout-quantity.js"></script>
+    <script src="../components/js/coupon-toggle.js"></script>
+    <script src="../components/js/payment-options.js"></script>
+    <script src="../components/js/promo-timer.js"></script>
+
+</body>
+</html>
+

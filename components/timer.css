@@ -1,0 +1,98 @@
+/* Timer Component - Mechanical Style */
+
+.lightning-timer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #f5f5f7;
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace; /* Monospaced for mechanical feel */
+}
+
+.timer-box {
+    background: #1d1d1f;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    min-width: 32px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shine effect on the mechanical box */
+.timer-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
+    pointer-events: none;
+}
+
+.timer-separator {
+    color: #1d1d1f;
+    font-weight: 700;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.5; }
+}
+
+.timer-progress-bar {
+    width: 120px;
+    height: 6px;
+    background: #e1e1e1;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.timer-progress-fill {
+    height: 100%;
+    background: #e84c0f;
+    border-radius: 100px;
+    transition: width 1s linear;
+}
+
+/* Tick Animation */
+.tick-anim {
+    animation: tick 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes tick {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .lightning-timer {
+        gap: 8px;
+        padding: 6px 10px;
+    }
+    
+    .timer-box {
+        font-size: 14px;
+        min-width: 28px;
+        padding: 3px 6px;
+    }
+    
+    .timer-progress-bar {
+        width: 60px;
+    }
+}

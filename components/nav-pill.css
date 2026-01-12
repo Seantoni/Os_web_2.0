@@ -1,0 +1,80 @@
+/* Sticky Pill Navigation (Airbnb Utility) */
+.nav-wrapper {
+    position: sticky;
+    top: 80px;
+    z-index: 900;
+    margin-bottom: 24px;
+    padding: 10px 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.category-pill-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 100px;
+    padding: 8px;
+    display: inline-flex;
+    gap: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    pointer-events: auto;
+    max-width: calc(100% - 40px);
+    overflow-x: auto;
+    border: 1px solid rgba(255,255,255,0.6);
+    /* Hide Scrollbar */
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.category-pill-nav::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    color: #1d1d1f;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em; /* Premium spacing */
+    transition: all 0.2s;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.nav-item i { 
+    font-size: 16px; 
+    color: #86868b; 
+    transition: color 0.2s; 
+}
+
+.nav-item:hover { 
+    background: #F2F2F2; 
+}
+
+.nav-item.active { 
+    background: #e84c0f; 
+    color: white; 
+    box-shadow: 0 4px 12px rgba(232, 76, 15, 0.3); /* Premium glow */
+}
+
+.nav-item.active i { 
+    color: white; 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-wrapper { 
+        top: 70px; 
+    }
+    .category-pill-nav { 
+        max-width: 90%;
+        overflow-x: auto; 
+    }
+}

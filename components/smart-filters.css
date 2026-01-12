@@ -1,0 +1,129 @@
+/* Smart Filters Styles */
+.nav-wrapper {
+    gap: 12px;
+    align-items: center;
+
+    margin-bottom: 24px !important;
+}
+
+.sort-dropdown {
+    position: relative;
+    z-index: 1000;
+    /* Ensure the dropdown container doesn't collapse */
+    display: flex;
+    align-items: center;
+    /* Add separator before the sort button */
+    padding-left: 12px;
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+
+.sort-btn {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 100px;
+    /* Matches .category-pill-nav padding (8px) + .nav-item padding (10px top/bottom) */
+    padding: 18px 24px; 
+    color: #1d1d1f;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Matches .category-pill-nav shadow */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    height: 58px; /* Explicit height to match pill nav */
+    border: 1px solid rgba(255,255,255,0.6); /* Matches pill border */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.sort-btn:hover {
+    background: #f5f5f7;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.sort-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: white;
+    min-width: 220px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.sort-dropdown.active .sort-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sort-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    color: #1d1d1f;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.sort-option:hover {
+    background: #f5f5f7;
+}
+
+.sort-option i {
+    color: #86868b;
+    width: 16px;
+}
+
+.sort-option.active {
+    background: #f5f5f7;
+    font-weight: 600;
+}
+
+.sort-option.active i {
+    color: #e84c0f;
+}
+
+/* Hide Scrollbar for Pill Nav */
+.category-pill-nav {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.category-pill-nav::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .sort-btn span {
+        display: none;
+    }
+    .sort-btn {
+        padding: 0;
+        border-radius: 50%;
+        width: 48px; /* Slightly larger touch target */
+        height: 48px;
+        justify-content: center;
+    }
+    .sort-menu {
+        right: -10px;
+    }
+    /* Hide divider on mobile */
+    .sort-dropdown {
+        border-left: none;
+        padding-left: 0;
+    }
+}
